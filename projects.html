@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects - Maricel Saccheto</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="profile-header">
+      <img src="profile.jpg" alt="Maricel Saccheto" class="profile-img" />
+      <div>
+        <h1>Maricel Saccheto</h1>
+        <p>Web Designer | Canva | Beginner Developer</p>
+        <a class="resume-btn" href="resume-jp.pdf" download>📄 Download Japanese Resume</a>
+        <a class="resume-btn" href="resume-en.pdf" download>📄 Download English Resume</a>
+        <a class="resume-btn" href="index.html">🏠 Home</a>
+      </div>
+    </div>
+
+    <!-- 🌙 Dark Mode Toggle -->
+    <div class="toggle-container">
+      <label class="switch">
+        <input type="checkbox" id="darkModeToggle">
+        <span class="slider round"></span>
+      </label>
+      <span class="toggle-label">Dark Mode</span>
+    </div>
+  </header>
+
+  <section class="about">
+    <h2>About Me</h2>
+    <p>Hello! I'm a passionate beginner in web design. I use tools like Canva, HTML, and CSS to create clean and attractive layouts.</p>
+  </section>
+
+  <section class="portfolio">
+    <h2>My Projects</h2>
+
+    <div class="filter-buttons">
+      <button onclick="filterProjects('all')">All</button>
+      <button onclick="filterProjects('website')">Websites</button>
+      <button onclick="filterProjects('canva')">Canva Designs</button>
+    </div>
+
+    <div class="project" data-category="website">
+      <img src="wardiere-sample.jpg" alt="Philippine Restaurant Sample Thumbnail" />
+      <h3>Philippine Restaurant</h3>
+      <p>Sample restaurant menu featuring Philippine BBQ, meals, drinks, and more.</p>
+      <a href="Philippine Restaurant.html" target="_blank">View Project</a>
+    </div>
+
+    <div class="project" data-category="canva">
+      <img src="canva-post-thumbnail.jpg" alt="Social Media Design" />
+      <h3>Instagram Promo Designs</h3>
+      <p>Promotional posts made in Canva for Facebook & Instagram.</p>
+      <a href="https://www.canva.com/design/DAGoPZ2I8Fo/EZD6yEu1wzc-tbj1EHnTHg/view?utm_content=DAGoPZ2I8Fo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks" target="_blank">View Project</a>
+    </div>
+
+    <div class="project" data-category="coming">
+      <img src="coming-soon.jpg" alt="Coming Soon" />
+      <h3>More Projects Coming Soon</h3>
+      <p>New web and design projects will be added soon. Stay tuned!</p>
+      <a href="#">Coming Soon</a>
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>Contact Me</h2>
+    <p>Email: maricel.saccheto@gmail.com</p>
+    <p>Instagram: @maricelsaccheto</p>
+  </section>
+
+  <footer>
+    <p>© 2025 imuzazumi. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('darkModeToggle');
+
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      document.body.classList.add('dark-mode');
+      toggle.checked = true;
+    }
+
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('darkMode', 'enabled');
+      } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('darkMode', 'disabled');
+      }
+    });
+  </script>
+  <script>
+    function filterProjects(category) {
+      const projects = document.querySelectorAll('.project');
+      projects.forEach(project => {
+        const isMatch = category === 'all' || project.dataset.category === category;
+        project.style.display = isMatch ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
