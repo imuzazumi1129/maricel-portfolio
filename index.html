@@ -9,24 +9,24 @@
 <body>
   <header>
     <div class="profile-header">
-  <img src="profile.jpg" alt="Maricel Saccheto" class="profile-img" />
-  <div>
-    <h1>Maricel Saccheto</h1>
-    <p>Web Designer | Canva | Beginner Developer</p>
-    <a class="resume-btn" href="resume-jp.pdf" download>📄 Download Japanese Resume</a>
-    <a class="resume-btn" href="resume-en.pdf" download>📄 Download English Resume</a>
-  </div>
-</div>
+      <img src="profile.jpg" alt="Maricel Saccheto" class="profile-img" />
+      <div>
+        <h1>Maricel Saccheto</h1>
+        <p>Web Designer | Canva | Beginner Developer</p>
+        <a class="resume-btn" href="resume-jp.pdf" download>📄 Download Japanese Resume</a>
+        <a class="resume-btn" href="resume-en.pdf" download>📄 Download English Resume</a>
+      </div>
+    </div>
 
-  <!-- 🌙 Dark Mode Toggle -->
-  <div class="toggle-container">
-    <label class="switch">
-      <input type="checkbox" id="darkModeToggle">
-      <span class="slider round"></span>
-    </label>
-    <span class="toggle-label">Dark Mode</span>
-  </div>
-</header>
+    <!-- 🌙 Dark Mode Toggle -->
+    <div class="toggle-container">
+      <label class="switch">
+        <input type="checkbox" id="darkModeToggle">
+        <span class="slider round"></span>
+      </label>
+      <span class="toggle-label">Dark Mode</span>
+    </div>
+  </header>
 
   <section class="about">
     <h2>About Me</h2>
@@ -34,29 +34,32 @@
   </section>
 
   <section class="portfolio">
-  <h2>My Projects</h2>
+    <h2>My Projects</h2>
 
-  <div class="filter-buttons">
-    <button onclick="filterProjects('all')">All</button>
-    <button onclick="filterProjects('website')">Websites</button>
-    <button onclick="filterProjects('canva')">Canva Designs</button>
-  </div>
+    <div class="filter-buttons">
+      <button onclick="filterProjects('all')">All</button>
+      <button onclick="filterProjects('website')">Websites</button>
+      <button onclick="filterProjects('canva')">Canva Designs</button>
+    </div>
 
-  <div class="project" data-category="website">
-    <img src="wardiere-sample.jpg" alt="Philippine Restaurant Sample Thumbnail" />
-    <h3>Philippine Restaurant</h3>
-    <p>Sample restaurant menu featuring Philippine BBQ, meals, drinks, and more.</p>
-    <a href="Philippine Restaurant.html" target="_blank">View Project</a>
-  </div>
+    <div class="project" data-category="website">
+      <img src="wardiere-sample.jpg" alt="Philippine Restaurant Sample Thumbnail" />
+      <h3>Philippine Restaurant</h3>
+      <p>Sample restaurant menu featuring Philippine BBQ, meals, drinks, and more.</p>
+      <a href="Philippine Restaurant.html" target="_blank">View Project</a>
+    </div>
 
-  <div class="project" data-category="canva">
-    <img src="canva-post-thumbnail.jpg" alt="Social Media Design" />
-    <h3>Instagram Promo Designs</h3>
-    <p>Promotional posts made in Canva for Facebook & Instagram.</p>
-    <a href="https://www.canva.com/design/DAGoPZ2I8Fo/EZD6yEu1wzc-tbj1EHnTHg/view?utm_content=DAGoPZ2I8Fo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h2b4d0aa90c" target="_blank">View Project</a>
-  </div>
-</section>
+    <div class="project" data-category="canva">
+      <img src="canva-post-thumbnail.jpg" alt="Social Media Design" />
+      <h3>Instagram Promo Designs</h3>
+      <p>Promotional posts made in Canva for Facebook & Instagram.</p>
+      <a href="https://www.canva.com/design/DAGoPZ2I8Fo/EZD6yEu1wzc-tbj1EHnTHg/view?utm_content=DAGoPZ2I8Fo&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks" target="_blank">View Project</a>
+    </div>
 
+    <div style="text-align:center; margin-top: 1.5em;">
+      <a href="projects.html" class="resume-btn">📁 View All Projects</a>
+    </div>
+  </section>
 
   <section class="contact">
     <h2>Contact Me</h2>
@@ -65,37 +68,37 @@
   </section>
 
   <footer>
-    <p>© 2025 imuzazumi. All rights reserved.</p>
+    <p>© 2025 Maricel Saccheto. All rights reserved.</p>
   </footer>
 
   <script>
-  const toggle = document.getElementById('darkModeToggle');
+    const toggle = document.getElementById('darkModeToggle');
 
-  // Check saved preference on page load
-  if (localStorage.getItem('darkMode') === 'enabled') {
-    document.body.classList.add('dark-mode');
-    toggle.checked = true;
-  }
-
-  toggle.addEventListener('change', () => {
-    if (toggle.checked) {
+    // Check saved preference on page load
+    if (localStorage.getItem('darkMode') === 'enabled') {
       document.body.classList.add('dark-mode');
-      localStorage.setItem('darkMode', 'enabled');
-    } else {
-      document.body.classList.remove('dark-mode');
-      localStorage.setItem('darkMode', 'disabled');
+      toggle.checked = true;
     }
-  });
-</script>
-<script>
-  function filterProjects(category) {
-    const projects = document.querySelectorAll('.project');
-    projects.forEach(project => {
-      const isMatch = category === 'all' || project.dataset.category === category;
-      project.style.display = isMatch ? 'block' : 'none';
-    });
-  }
-</script>
 
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('darkMode', 'enabled');
+      } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('darkMode', 'disabled');
+      }
+    });
+  </script>
+  <script>
+    function filterProjects(category) {
+      const projects = document.querySelectorAll('.project');
+      projects.forEach(project => {
+        const isMatch = category === 'all' || project.dataset.category === category;
+        project.style.display = isMatch ? 'block' : 'none';
+      });
+    }
+  </script>
 </body>
 </html>
+
