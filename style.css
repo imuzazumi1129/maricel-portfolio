@@ -6,6 +6,17 @@ body {
   color: #333;
 }
 
+.certificate-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+
+.certificate-container img {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 8px;
+}
 
 
 header {
