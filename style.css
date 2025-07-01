@@ -4,6 +4,7 @@ body {
   padding: 0;
   background: #f4f4f4; /* back to default */
   color: #333;
+   line-height: 1.6;
 }
 
 .certificate-caption {
@@ -19,6 +20,10 @@ body {
   max-width: 300px;
   width: 100%;
   border-radius: 8px;
+}
+
+.profile-img, .certificate-img {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 
