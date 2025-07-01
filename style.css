@@ -1,3 +1,4 @@
+/* === BASE STYLES === */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -23,6 +24,12 @@ header {
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.resume-btn:hover {
+  background: #409f75;
+  color: white;
 }
 
 section {
@@ -49,6 +56,8 @@ section {
   object-fit: cover;
   border: 3px solid white;
 }
+
+/* === FILTER BUTTONS === */
 .filter-buttons {
   text-align: center;
   margin-bottom: 1em;
@@ -62,19 +71,30 @@ section {
   color: white;
   cursor: pointer;
   border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.1s;
 }
 
 .filter-buttons button:hover {
   background: #409f75;
 }
 
+.filter-buttons button:active {
+  transform: scale(0.97);
+}
 
+/* === PROJECTS === */
 .project {
   background: white;
   padding: 1em;
   margin-bottom: 1.5em;
   border-left: 5px solid #62b38c;
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-3px);
 }
 
 .project img {
@@ -85,6 +105,16 @@ section {
   border-radius: 5px;
 }
 
+/* === CERTIFICATE IMAGE === */
+#certificate img {
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  max-width: 100%;
+  height: auto;
+  margin-top: 1em;
+}
+
+/* === TEXT === */
 a {
   color: #62b38c;
   text-decoration: none;
@@ -96,14 +126,35 @@ a:hover {
   color: #409f75;
 }
 
+.about p {
+  line-height: 1.6;
+  font-size: 1.1em;
+  margin-top: 0.5em;
+}
+
+.contact p {
+  margin: 0.4em 0;
+}
+
+/* === FOOTER === */
 footer {
   text-align: center;
   padding: 1em;
   background: #222;
   color: white;
+  font-size: 0.9em;
 }
 
-/* Dark Mode Core */
+footer a {
+  color: #76ff03;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: #b0ff57;
+}
+
+/* === DARK MODE === */
 body.dark-mode {
   background: #1c1c1c;
   color: #f0f0f0;
@@ -129,7 +180,7 @@ body.dark-mode .resume-btn {
   color: white;
 }
 
-/* Toggle Switch */
+/* === TOGGLE SWITCH === */
 .toggle-container {
   margin-top: 1em;
   display: flex;
@@ -185,8 +236,7 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-
-/* Mobile responsive */
+/* === MOBILE RESPONSIVE === */
 @media (max-width: 600px) {
   header h1 {
     font-size: 1.8em;
@@ -199,5 +249,9 @@ input:checked + .slider:before {
 
   .project img {
     max-height: 150px;
+  }
+
+  .profile-header {
+    flex-direction: column;
   }
 }
