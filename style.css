@@ -6,6 +6,10 @@ body {
   background: #f4f4f4;
   color: #333;
 }
+body {
+  background: #ffe0e0; /* light pink for testing */
+}
+
 
 header {
   background: #62b38c;
